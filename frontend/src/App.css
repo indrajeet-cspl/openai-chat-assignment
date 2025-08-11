@@ -6,12 +6,13 @@ body {
 /* Center content with fixed width */
 .app-container {
   display: flex;
+  width: 100vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
 }
 
@@ -66,12 +67,12 @@ textarea#answer {
 }
 
 button {
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   background-color: #007bff;
   color: white;
   border: none;
   cursor: pointer;
-  margin: 20px 0;
+  /* margin: 20px 0; */
 }
 
 button:disabled {
