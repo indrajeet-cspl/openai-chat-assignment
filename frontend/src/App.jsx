@@ -32,9 +32,9 @@ function App() {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-      <h1>Query→Answer App</h1>
-      <div>
+    <div className="app-container">
+      <h1>ChatIG</h1>
+      <div className="query-container">
         <label htmlFor="query">Query</label>
         <textarea
           id="query"
@@ -42,9 +42,9 @@ function App() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Enter your query here..."
           rows="4"
-          style={{ width: '100%', marginBottom: '10px' }}
           required
         />
+        <span className="char-count">{query.length}/2000</span>
       </div>
       <button onClick={handleSubmit} disabled={loading}>
         {loading ? 'Loading...' : 'Send'}
