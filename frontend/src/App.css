@@ -1,81 +1,115 @@
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* Center content with fixed width */
-.app-container {
+  font-family: 'Inter', sans-serif;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
   display: flex;
-  width: 100vw;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-  /* max-width: 600px; */
-  margin: 0 auto;
+  align-items: center;
+  height: 100vh;
 }
 
-/* Title - prevent width influence */
+/* Card container */
+.app-container {
+  background-color: #2a2a2a;
+  padding: 3rem;              /* Increased padding for bigger card */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  width: 100%;
+  max-width: 900px;           /* Bigger width */
+}
+
+
+
+
+/* Title */
 h1 {
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 30px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-/* Style for query textarea container to position character count */
+/* Labels */
+label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Query container */
 .query-container {
   position: relative;
-  width: 500px; /* Fixed width */
-  margin-bottom: 30px;
+  margin-bottom: 1.5rem;
 }
 
-/* Character count styling */
+/* Character count */
 .char-count {
   position: absolute;
-  bottom: -20px;
+  bottom: -18px;
   right: 0;
-  font-size: 12px;
-  color: #666;
+  font-size: 0.8rem;
+  color: #aaaaaa;
 }
 
-/* Answer container with same fixed width */
-.answer-container {
-  width: 500px; /* Same fixed width */
-}
-
-/* General styles */
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  text-align: left;
-}
-
+/* Textareas */
 textarea {
-  padding: 8px;
-  font-size: 16px;
   width: 100%;
-  height: 150px; /* Fixed larger height */
-  box-sizing: border-box;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
   resize: none;
-  overflow-y: auto;
+  transition: border-color 0.2s;
+  min-height: 180px;          
+  font-size: 1.1rem;  
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #3a82f6;
 }
 
 textarea#answer {
-  color: #333;
-  background: #f0f0f0;
+  background-color: #1a1a1a;
+  min-height: 100px;
+  white-space: pre-wrap;
+  cursor: not-allowed;
 }
 
+/* Button styles */
 button {
-  /* padding: 10px 20px; */
-  background-color: #007bff;
+  width: 100%;
+  background-color: #3a82f6;
   color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem;
   border: none;
+  border-radius: 8px;
+  margin: 0.5rem 0 1rem 0;
   cursor: pointer;
-  /* margin: 20px 0; */
+  transition: background-color 0.2s, transform 0.1s;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 button:disabled {
-  background-color: #cccccc;
+  background-color: #555;
   cursor: not-allowed;
+}
+
+.answer-container {
+  margin-top: 1rem;
 }
