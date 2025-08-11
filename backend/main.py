@@ -1,3 +1,4 @@
+import asyncio
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import os
@@ -29,7 +30,10 @@ async def get_answer(input: QueryInput):
         raise HTTPException(status_code=400, detail="Query exceeds 2000 character limit")
 
     try:
-        response = await get_answer_stubbed(query=query)
-        return response
+        async with asyncio.timeout(15):
+            response = await get_answer_stubbed(query=query)
+            return response
+    except asyncio.TimeoutError:
+        raise HTTPException(status_code=504, detail="Request to OpenAI Service timed out")
     except Exception as e:
         raise HTTPException(status_code=500, detail="Failed to process query")
