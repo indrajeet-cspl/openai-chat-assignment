@@ -33,10 +33,10 @@ Setup and Run Instructions
         
     
 4.  create a .env file in the folder. Add the following environment variables:
+
     -   OPENAI_API_KEY (REQUIRED)
-    -   OPENAI_MODEL (OPTIONAL)
+    -   OPENAI_MODEL (OPTIONAL) 
     -   BACKEND_URL (REQUIRED) (http://localhost:5173 is the default)
-    -   PORT (OPTIONAL) (8000 is the default) 
 
 5.  Run the FastAPI server:
     
@@ -55,14 +55,16 @@ Setup and Run Instructions
     
         npm install
         
-    
+3.  Create a .env inside the frontend folder. Add the variable:
 
-3.  Run the development server:
+    -   VITE_BACKEND_URL (Default is http://localhost:8000)
+
+4.  Run the development server:
     
         npm run dev
         
     
-4.  Open `http://localhost:5173` in your browser.
+5.  Open `http://localhost:5173` in your browser.
 
 
 
@@ -75,3 +77,9 @@ Setup and Run Instructions
 
 Assumptions and Trade-offs
 --------------------------
+
+*   I used a simple async function in services.py for the stubbed response as I do not have an OpenAI API key. To ensure simplicity and readability. I avoided a full OpenAI integration (e.g., OpenAIService class with the instantiation of) to prevent overcomplication, focusing on code clarity and end-to-end correctness. 
+
+*   The modular structure of the backend (schemas.py, services.py, main.py) keeps the code clean.
+
+*   environment variables (FRONTEND_URL, VITE_BACKEND_URL) ensure robustness and portability without adding unnecessary complexity. 

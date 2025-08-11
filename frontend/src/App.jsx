@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import { backendUrl } from './config';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -13,7 +14,7 @@ function App() {
     setAnswer('');
     
     try {
-      const response = await fetch('http://localhost:8000/api/answer', {
+      const response = await fetch(`${backendUrl}/api/answer`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
